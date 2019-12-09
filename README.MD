@@ -23,3 +23,11 @@ The incoming webhook has the **head_commit** information which exposes the added
 The output blob storage binding can take a byte stream, so request package is used to hit the GitHub URL for the image and then the byte stream is passed to the outputBlob's generic set() method.
 
 I couldn't figure out how to pass a blob name from the Python function.
+
+## Day9 - Github Issues
+
+- https://25daysofserverless.com/calendar/9
+
+Repository configured with the webhooks to test this out.
+
+- https://github.com/DexterPOSH/TestServerlessRepo
