@@ -60,8 +60,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     )
 
 
-
-
 def extractFileContent(contentObject: Dict) -> Dict:
     contentHashTable = {}
     for filename, filemeta in contentObject['files'].items():
