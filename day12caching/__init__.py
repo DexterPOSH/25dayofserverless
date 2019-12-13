@@ -38,16 +38,27 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         gistContent = fetchDataFromGist(os.environ['GITHUB_GISTID'])
         fileHashTable = extractFileContent(gistContent)
         logging.info('seeding cache for missing info...')
-        setValueInCache(friend, convertMDToHTML(fileHashTable[friend]))
+        try:
+            htmlContent = fileHashTable[friend]
+            setValueInCache(friend, convertMDToHTML(htmlContent))
+        except KeyError as notfound:
+            logging.warn(notfound)
+            return func.HttpResponse(
+                '',
+                status_code=204
+            )
+
     # Now cache must have the HTML content, get from it
     
+    bodyContent = getValueFromCache(friend)
     return func.HttpResponse(
-        getValueFromCache(friend),
+        body=bodyContent,
         status_code=200,
         headers={
             'Content-Type': 'text/html'
         }
     )
+
 
 
 
