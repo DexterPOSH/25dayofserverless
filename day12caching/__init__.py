@@ -39,8 +39,8 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         fileHashTable = extractFileContent(gistContent)
         logging.info('seeding cache for missing info...')
         try:
-            htmlContent = fileHashTable[friend]
-            setValueInCache(friend, convertMDToHTML(htmlContent))
+            mdContent = fileHashTable[friend]
+            setValueInCache(friend, convertMDToHTML(mdContent))
         except KeyError as notfound:
             logging.warn(notfound)
             return func.HttpResponse(
