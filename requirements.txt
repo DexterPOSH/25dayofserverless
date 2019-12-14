@@ -3,3 +3,5 @@ requests==2.22.0
 azure-cosmos==4.0.0b6
 redis==3.3.11
 markdown2==2.3.8
+textgenrnn==1.5.0
+tensorflow==2.0.0
