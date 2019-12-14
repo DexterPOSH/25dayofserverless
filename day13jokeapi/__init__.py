@@ -4,7 +4,6 @@ import pathlib
 from textgenrnn import textgenrnn
 import azure.functions as func
 
-logging.info(os.getcwd())
 weightsFile = pathlib.Path(__file__).parent / 'textgenrnn_weights.hdf5'
 TEXTGEN = textgenrnn(weightsFile)
 
