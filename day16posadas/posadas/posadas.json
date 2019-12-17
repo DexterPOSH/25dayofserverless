@@ -9,5 +9,16 @@
             "state": "Estado de Mexico",
             "codigopostal": "768792"
         }
+    },
+    {
+        "day": 2,
+        "host": "Dummy",
+        "address": {
+            "area": "Morelos",
+            "landmark": "near cafe de senor",
+            "city": "Metepec",
+            "stated": "Estado de Mexico",
+            "codigopostal": "768792"
+        }
     }
 ]
