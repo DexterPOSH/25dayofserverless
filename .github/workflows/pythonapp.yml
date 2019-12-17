@@ -34,10 +34,6 @@ jobs:
       run: |
         pip install pytest
         pytest
-    - name: 'Login via Azure CLI'
-      uses: Azure/actions/login@master
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Azure Functions Action
       uses: Azure/functions-action@v1.1.2
       with:
