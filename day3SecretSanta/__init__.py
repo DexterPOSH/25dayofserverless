@@ -12,7 +12,7 @@ def main(req: func.HttpRequest, outputBlob: func.Out[bytes]) -> func.HttpRespons
     except ValueError:
         return func.HttpResponse("Invalid JSON", status_code=400)
     repoInfo = req_body.get('repository')
-    logging.info("repoInfo)
+    logging.info("repoInfo")
     commitInfo = req_body.get('head_commit')
     logging.info(commitInfo)
     baseUrl = "{0}/raw/master/".format(repoInfo["html_url"])
