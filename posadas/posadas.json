@@ -1,0 +1,13 @@
+[
+    {
+        "day": 1,
+        "host": "Deepak",
+        "address": {
+            "area": "Morelos",
+            "landmark": "near cafe de senor",
+            "city": "Metepec",
+            "state": "Estado de Mexico",
+            "codigopostal": "768792"
+        }
+    }
+]
