@@ -1,6 +1,12 @@
 name: Python application
 
-on: [push]
+on:
+  push:
+    branches: 
+      - master
+  pull_request:
+    branches: 
+      - master
 
 jobs:
   build:
@@ -28,3 +34,13 @@ jobs:
       run: |
         pip install pytest
         pytest
+    - name: 'Login via Azure CLI'
+      uses: Azure/actions/login@master
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - name: Azure Functions Action
+      uses: Azure/functions-action@v1.1.2
+      with:
+        # Name of the Azure Function App
+        app-name: dexfuncapppy
+        publish-profile: ${{ secrets.SCM_CREDENTIALS }}
