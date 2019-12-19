@@ -1,8 +1,7 @@
 import logging
 import json
 import azure.functions as func
-from azure.cognitiveservices.vision.computervision.models._models_py3 import ComputerVisionErrorException
-from __app__.SharedCode.cognitiveHelper import getImageTags, is_url_image
+from __app__.SharedCode.cognitiveHelper import getImageTags
 from __app__.SharedCode.slackHelper import NotifySlack
 
 
